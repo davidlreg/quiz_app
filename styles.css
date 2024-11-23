@@ -25,3 +25,8 @@ body {
 .cardOptions {
   padding: 18px 0px;
 }
+
+.quiz-answer:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}

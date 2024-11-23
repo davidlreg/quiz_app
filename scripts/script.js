@@ -29,3 +29,14 @@ function showCurrentAnswerOptions() {
   document.getElementById("answer_3").innerHTML = question["answer_3"];
   document.getElementById("answer_4").innerHTML = question["answer_4"];
 }
+
+function answer(selection) {
+  let userAnswerChoice = selection.slice(-1);
+  let correctAnswer = questions[currentQuestion].right_answer;
+
+  if (userAnswerChoice == correctAnswer) {
+    console.log("Right answer!");
+  } else {
+    console.log("Wrong answer!");
+  }
+}
