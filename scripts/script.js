@@ -31,14 +31,15 @@ function showCurrentAnswerOptions() {
 }
 
 function answer(selection) {
+  let question = questions[currentQuestion];
   let userAnswerChoice = selection.slice(-1);
   let correctAnswer = questions[currentQuestion].right_answer;
+  let idOfRightAnswer = `answer_${question["right_answer"]}`;
 
   if (userAnswerChoice == correctAnswer) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
-    console.log("Right answer!");
   } else {
     document.getElementById(selection).parentNode.classList.add("bg-danger");
-    console.log("Wrong answer!");
+    document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
   }
 }
