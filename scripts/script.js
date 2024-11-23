@@ -35,8 +35,10 @@ function answer(selection) {
   let correctAnswer = questions[currentQuestion].right_answer;
 
   if (userAnswerChoice == correctAnswer) {
+    document.getElementById(selection).parentNode.classList.add("bg-success");
     console.log("Right answer!");
   } else {
+    document.getElementById(selection).parentNode.classList.add("bg-danger");
     console.log("Wrong answer!");
   }
 }
