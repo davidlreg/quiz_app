@@ -45,7 +45,15 @@
 
           <div class="question-footer">
             <span><b>1</b> von <b id="totalPagesAmount"></b> Fragen</span>
-            <button type="button" class="btn btn-primary">Nächste Frage</button>
+            <button
+              onclick="nextQuestion()"
+              type="button"
+              class="btn btn-primary"
+              disabled
+              id="next-Button"
+            >
+              Nächste Frage
+            </button>
           </div>
         </div>
       </div>

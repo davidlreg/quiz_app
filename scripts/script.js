@@ -3,7 +3,6 @@ let currentQuestion = 0;
 function init() {
   loadPages();
   showCurrentQuestion();
-  showCurrentAnswerOptions();
 }
 
 function loadPages() {
@@ -19,6 +18,7 @@ function showCurrentQuestion() {
 
   currentQuestionTitleRef.innerHTML = "";
   currentQuestionTitleRef.innerHTML = question;
+  showCurrentAnswerOptions();
 }
 
 function showCurrentAnswerOptions() {
@@ -40,6 +40,27 @@ function answer(selection) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
   } else {
     document.getElementById(selection).parentNode.classList.add("bg-danger");
-    document.getElementById(idOfRightAnswer).parentNode.classList.add("bg-success");
+    document
+      .getElementById(idOfRightAnswer)
+      .parentNode.classList.add("bg-success");
   }
+  document.getElementById("next-Button").disabled = false;
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  resetAnswerButtons();
+  showCurrentQuestion();
+}
+
+function resetAnswerButtons() {
+  document.getElementById("next-Button").disabled = true;
+  document.getElementById("answer_1").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer_1").parentNode.classList.remove("bg-success");
+  document.getElementById("answer_2").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer_2").parentNode.classList.remove("bg-success");
+  document.getElementById("answer_3").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer_3").parentNode.classList.remove("bg-success");
+  document.getElementById("answer_4").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer_4").parentNode.classList.remove("bg-success");
 }
