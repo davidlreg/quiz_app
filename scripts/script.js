@@ -1,12 +1,10 @@
 let currentQuestion = 0;
 
 function init() {
-  loadPages();
   showCurrentQuestion();
-  showCurrentPageNumber();
 }
 
-function loadPages() {
+function showTotalPageNumber() {
   let totalPagesRef = document.getElementById("totalPagesAmount");
 
   totalPagesRef.innerHTML = "";
@@ -27,6 +25,8 @@ function showCurrentQuestion() {
   currentQuestionTitleRef.innerHTML = "";
   currentQuestionTitleRef.innerHTML = question;
   showCurrentAnswerOptions();
+  showTotalPageNumber();
+  showCurrentPageNumber();
 }
 
 function showCurrentAnswerOptions() {
