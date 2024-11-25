@@ -3,6 +3,7 @@ let currentQuestion = 0;
 function init() {
   loadPages();
   showCurrentQuestion();
+  showCurrentPageNumber();
 }
 
 function loadPages() {
@@ -10,6 +11,13 @@ function loadPages() {
 
   totalPagesRef.innerHTML = "";
   totalPagesRef.innerHTML = questions.length;
+}
+
+function showCurrentPageNumber() {
+  let currentPageNumberRef = document.getElementById("currentPageNumber");
+
+  currentPageNumberRef.innerHTML = "";
+  currentPageNumberRef.innerHTML = currentQuestion + 1;
 }
 
 function showCurrentQuestion() {
@@ -51,6 +59,7 @@ function nextQuestion() {
   currentQuestion++;
   resetAnswerButtons();
   showCurrentQuestion();
+  showCurrentPageNumber();
 }
 
 function resetAnswerButtons() {
