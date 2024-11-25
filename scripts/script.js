@@ -4,20 +4,6 @@ function init() {
   showCurrentQuestion();
 }
 
-function showTotalPageNumber() {
-  let totalPagesRef = document.getElementById("totalPagesAmount");
-
-  totalPagesRef.innerHTML = "";
-  totalPagesRef.innerHTML = questions.length;
-}
-
-function showCurrentPageNumber() {
-  let currentPageNumberRef = document.getElementById("currentPageNumber");
-
-  currentPageNumberRef.innerHTML = "";
-  currentPageNumberRef.innerHTML = currentQuestion + 1;
-}
-
 function showCurrentQuestion() {
   let currentQuestionTitleRef = document.getElementById("titleQuestion");
   let question = questions[currentQuestion].question;
@@ -25,13 +11,14 @@ function showCurrentQuestion() {
   currentQuestionTitleRef.innerHTML = "";
   currentQuestionTitleRef.innerHTML = question;
   showCurrentAnswerOptions();
-  showTotalPageNumber();
-  showCurrentPageNumber();
 }
 
 function showCurrentAnswerOptions() {
   let question = questions[currentQuestion];
 
+  document.getElementById("question-footer").innerHTML = displayFooterContent();
+  document.getElementById("currentPageNumber").innerHTML = currentQuestion + 1;
+  document.getElementById("totalPagesAmount").innerHTML = questions.length;
   document.getElementById("answer_1").innerHTML = question["answer_1"];
   document.getElementById("answer_2").innerHTML = question["answer_2"];
   document.getElementById("answer_3").innerHTML = question["answer_3"];
@@ -56,10 +43,13 @@ function answer(selection) {
 }
 
 function nextQuestion() {
-  currentQuestion++;
-  resetAnswerButtons();
-  showCurrentQuestion();
-  showCurrentPageNumber();
+  if (currentQuestion + 1 >= questions.length) {
+    endQuiz();
+  } else {
+    currentQuestion++;
+    resetAnswerButtons();
+    showCurrentQuestion();
+  }
 }
 
 function resetAnswerButtons() {
@@ -72,4 +62,10 @@ function resetAnswerButtons() {
   document.getElementById("answer_3").parentNode.classList.remove("bg-success");
   document.getElementById("answer_4").parentNode.classList.remove("bg-danger");
   document.getElementById("answer_4").parentNode.classList.remove("bg-success");
+}
+
+function endQuiz() {
+  console.log("ENDE");
+  document.getElementById("next-Button").classList.add("d_none");
+  showCurrentAnswerOptions();
 }

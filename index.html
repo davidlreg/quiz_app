@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="./scripts/script.js"></script>
     <script src="./scripts/questions_db.js"></script>
+    <script src="./scripts/templates.js"></script>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -43,20 +44,7 @@
             </div>
           </div>
 
-          <div class="question-footer">
-            <span
-              ><b id="currentPageNumber"></b> von
-              <b id="totalPagesAmount"></b> Fragen</span
-            >
-            <button
-              onclick="nextQuestion()"
-              type="button"
-              class="btn btn-primary"
-              disabled
-              id="next-Button"
-            >
-              Nächste Frage
-            </button>
+          <div class="question-footer" id="question-footer">
           </div>
         </div>
       </div>
