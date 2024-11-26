@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meine Quiz App</title>
     <link rel="icon" type="image/x-icon" href="/img/brain result.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
     <script src="./scripts/script.js"></script>
     <script src="./scripts/questions_db.js"></script>
     <script src="./scripts/templates.js"></script>
@@ -16,12 +17,14 @@
   </head>
   <body onload="init()">
     <nav class="myNavbar navbarColor">
-        <a class="navbar-brand" href="#"><img src="img/logo.png" class=""></a>
+      <a class="navbar-brand" href="#"
+        ><img src="./assets/img/logo.png" class=""
+      /></a>
     </nav>
 
     <div class="container" id="container">
       <div class="card quizcard" style="width: 18rem">
-        <img src="/img/quiz.png" class="card-img-top" />
+        <img src="./assets/img/quiz.png" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title" id="titleQuestion"></h5>
 

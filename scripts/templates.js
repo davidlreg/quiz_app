@@ -28,7 +28,7 @@ function showFinalScreen() {
       style="width: 18rem"
     >
       <img
-        src="/img/brain result.png"
+        src="./assets/img/brain result.png"
         class="card-img-top endscreenImg endScreenPadding"
       />
 
