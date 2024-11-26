@@ -51,6 +51,7 @@ function nextQuestion() {
     currentQuestion++;
     resetAnswerButtons();
     showCurrentQuestion();
+    calculateProgress();
   }
 }
 
@@ -73,4 +74,9 @@ function endQuiz() {
     questions.length;
   document.getElementById("finalScreenRightAnswers").innerHTML =
     rightAnswerdQuestions;
+}
+
+function calculateProgress() {
+  let percent = (currentQuestion / questions.length) * 100;
+  console.log(percent);
 }
