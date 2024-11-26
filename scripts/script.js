@@ -1,4 +1,5 @@
 let currentQuestion = 0;
+let rightAnswerdQuestions = 0;
 
 function init() {
   showCurrentQuestion();
@@ -33,6 +34,7 @@ function answer(selection) {
 
   if (userAnswerChoice == correctAnswer) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
+    rightAnswerdQuestions++;
   } else {
     document.getElementById(selection).parentNode.classList.add("bg-danger");
     document
@@ -65,7 +67,10 @@ function resetAnswerButtons() {
 }
 
 function endQuiz() {
-  console.log("ENDE");
-  document.getElementById("next-Button").classList.add("d_none");
-  showCurrentAnswerOptions();
+  document.getElementById("container").innerHTML = "";
+  document.getElementById("container").innerHTML = showFinalScreen();
+  document.getElementById("finalScreenTotalQuestions").innerHTML =
+    questions.length;
+  document.getElementById("finalScreenRightAnswers").innerHTML =
+    rightAnswerdQuestions;
 }

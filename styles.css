@@ -1,15 +1,27 @@
 body {
-  background-color: #007aff !important;
+  background-color: #fefaef !important;
 }
 
 .d_none {
   display: none;
 }
 
+.navbarColor {
+  background-color: #27355c !important;
+}
+
+.myNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+}
+
 .container {
   min-height: 100vh;
   width: 100%;
-  background-color: #007aff !important;
+  background-color: #fefaef;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,10 +45,52 @@ body {
 
 .quiz-answer:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .bg-success,
 .bg-danger {
   color: white !important;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  font-size: 22px;
+  padding: 16px;
+}
+
+.endscreenButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.endscreenImg {
+  width: auto;
+  height: 164px;
+  object-fit: contain;
+}
+
+.endScreenPadding {
+  padding: 24px;
+}
+
+.colorOrange {
+  color: #ee8836;
+}
+
+.answeredQuestions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
